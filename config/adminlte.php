@@ -346,8 +346,12 @@ return [
                 [
                     'text' => 'Student-list',
                     'icon' => 'fas fa-fw fa-bookmark',
-
                     'url' => '/admin/student-list',
+                ],
+                [
+                    'text' => 'Import-Student-list',
+                    'icon' => 'fas fa-fw fa-bookmark',
+                    'url' => 'admin/import-student-data',
                 ],
             ],
         ],

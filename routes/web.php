@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ImportDataController;
 use App\Http\Controllers\Admin\SearchController;
 use App\Http\Controllers\Admin\SessionController;
 use App\Http\Controllers\Admin\StudentController;
@@ -59,6 +60,10 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/all-session', [SessionController::class, 'ShowAllSession'])->name('session.all');
     Route::get('/active-session', [SessionController::class, 'showActiveSession'])->name('active.session.view');
 
+
+    // import excel data
+    Route::get('/import-student-data', [ImportDataController::class, 'showImportBlade']);
+    Route::POST('/import-student', [ImportDataController::class, 'importStudentData'])->name('import.student.data');
 
 });
 
