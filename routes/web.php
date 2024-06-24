@@ -65,6 +65,11 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/import-student-data', [ImportDataController::class, 'showImportBlade']);
     Route::POST('/import-student', [ImportDataController::class, 'importStudentData'])->name('import.student.data');
 
+
+    Route::get('/redirect', function () {
+        return redirect('/admin/session-page');
+    })->name('redirect.session');
+
 });
 
 Route::prefix('admin', )->middleware(['auth', 'superadmin'])->group(function () {
