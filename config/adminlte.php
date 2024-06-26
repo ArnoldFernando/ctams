@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'CSU-APARRI LIBRARY',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>CSU</b>LIBRARY',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>CSU-APARRI LIBRARY</b>',
+    'logo_img' => 'assets/img/csulogo.png',
+    'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'CSU Logo',
 
     /*
     |--------------------------------------------------------------------------
@@ -113,8 +113,8 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'assets/img/csulogo.png',
+            'alt' => 'CSU Logo Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
             'height' => 60,
@@ -154,8 +154,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -215,9 +215,9 @@ return [
     */
 
     'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
-    'sidebar_collapse_auto_size' => false,
-    'sidebar_collapse_remember' => false,
+    'sidebar_collapse' => true,
+    'sidebar_collapse_auto_size' => true,
+    'sidebar_collapse_remember' => true,
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
@@ -297,7 +297,7 @@ return [
         // Navbar items:
         [
             'type' => 'navbar-search',
-            'text' => 'search',
+            'text' => 'Search',
             'topnav_right' => true,
         ],
         [
@@ -308,49 +308,39 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Search',
         ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
-        [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
+        // [
+        //     'text' => 'pages',
+        //     'url' => 'admin/pages',
+        //     'icon' => 'far fa-fw fa-file',
+        //     'label' => 4,
+        //     'label_color' => 'success',
+        // ],
+        ['header' => 'NAVIGATION'],
         [
             'text' => 'Dashboard',
             'url' => 'admin/dashboard-visits',
-            'icon' => 'fas fa-fw fa-chart-simple',
+            'icon' => 'fa-solid fa-house',
         ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+
         [
             'text' => 'Students',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'add-student',
-                    'icon' => 'fas fa-fw fa-address-book',
-
+                    'text' => 'Add Student',
+                    'icon' => 'fa-solid fa-user-plus',
                     'url' => '/admin/add-student-form',
                 ],
                 [
-                    'text' => 'Student-list',
-                    'icon' => 'fas fa-fw fa-bookmark',
+                    'text' => 'Student-List',
+                    'icon' => 'fa-solid fa-users',
                     'url' => '/admin/student-list',
                 ],
                 [
-                    'text' => 'Import-Student-list',
-                    'icon' => 'fas fa-fw fa-bookmark',
+                    'text' => 'Import Student List',
+                    'icon' => 'fa-solid fa-user-pen',
                     'url' => 'admin/import-student-data',
                 ],
             ],
@@ -369,7 +359,7 @@ return [
                 ],
                 [
                     'text' => 'All Sessions',
-                    'icon' => 'fas fa-fw fa-cube',
+                    'icon' => 'fa-solid fa-cubes',
                     'url' => '/admin/all-session',
                 ],
                 [
@@ -377,29 +367,21 @@ return [
                     'icon' => 'fas fa-fw fa-cube',
                     'url' => '/admin/active-session',
                 ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
 
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'ACCOUNT INFORMATION'],
         [
-            'text' => 'important',
-            'icon_color' => 'red',
+            'text' => 'Profile',
             'url' => '#',
+            'icon' => 'fa-solid fa-user',
         ],
         [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
+            'text' => 'change_password',
             'url' => '#',
+            'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
+
     ],
 
     /*
@@ -504,6 +486,16 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        'FontAwesome' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
                 ],
             ],
         ],
